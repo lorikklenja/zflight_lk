@@ -193,7 +193,7 @@
                 <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.zui_flight_lk_o4.v0001.I_DraftAdministrativeDataType"/>
             </EntityContainer>
             <Annotations Target="SAP__self.FlightLKType/Carrid">
-                <Annotation Term="SAP__common.Label" String="Carrid"/>
+                <Annotation Term="SAP__common.Label" String="Airline Id"/>
                 <Annotation Term="SAP__core.Immutable"/>
             </Annotations>
             <Annotations Target="SAP__self.FlightLKType/Carrname">
@@ -216,6 +216,7 @@
             <Annotations Target="SAP__self.FlightLKType/LocalCreatedBy">
                 <Annotation Term="SAP__core.Computed"/>
                 <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
                 <Annotation Term="SAP__common.Label" String="Created By"/>
                 <Annotation Term="SAP__common.QuickInfo" String="Created By User"/>
                 <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=ABP_CREATION_USER"/>
@@ -270,12 +271,12 @@
                 <Annotation Term="SAP__UI.Identification">
                     <Collection>
                         <Record Type="SAP__UI.DataField">
-                            <PropertyValue Property="Label" String="Airline"/>
-                            <PropertyValue Property="Value" Path="Carrname"/>
-                        </Record>
-                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Label" String="Carrid"/>
                             <PropertyValue Property="Value" Path="Carrid"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Airline"/>
+                            <PropertyValue Property="Value" Path="Carrname"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Label" String="Currcode"/>
@@ -305,16 +306,17 @@
                 <Annotation Term="SAP__UI.LineItem">
                     <Collection>
                         <Record Type="SAP__UI.DataField">
-                            <PropertyValue Property="Label" String="Airline"/>
-                            <PropertyValue Property="Value" Path="Carrname"/>
-                        </Record>
-                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Label" String="Carrid"/>
                             <PropertyValue Property="Value" Path="Carrid"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Carrname"/>
+                            <PropertyValue Property="Value" Path="Carrname"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Label" String="Currcode"/>
                             <PropertyValue Property="Value" Path="Currcode"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
                         </Record>
                         <Record Type="SAP__UI.DataFieldWithUrl">
                             <PropertyValue Property="Label" String="Url"/>
@@ -344,10 +346,8 @@
                 </Annotation>
                 <Annotation Term="SAP__UI.SelectionFields">
                     <Collection>
-                        <PropertyPath>Carrname</PropertyPath>
                         <PropertyPath>Carrid</PropertyPath>
-                        <PropertyPath>Currcode</PropertyPath>
-                        <PropertyPath>Url</PropertyPath>
+                        <PropertyPath>Carrname</PropertyPath>
                         <PropertyPath>LocalCreatedBy</PropertyPath>
                         <PropertyPath>LocalCreatedAt</PropertyPath>
                         <PropertyPath>LocalLastChangedBy</PropertyPath>
