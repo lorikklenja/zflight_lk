@@ -149,6 +149,20 @@
                     "route": "FlightDetailsLORObjectPage"
                   }
                 }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "GeoMap": {
+                      "template": "flightlk.ext.fragment.GeoMap",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "GeneralInfo"
+                      },
+                      "title": "Itinerary"
+                    }
+                  }
+                }
               }
             }
           }
